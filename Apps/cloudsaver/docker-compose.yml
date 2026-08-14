@@ -1,13 +1,13 @@
-name: cloud-saver
+name: cloudsaver
 services:
-  cloud-saver:
+  cloudsaver:
     image: jiangrui1994/cloudsaver:latest
-    container_name: cloud-saver
+    container_name: cloudsaver
     ports:
       - "8008:8008"
     volumes:
-      - /DATA/AppData/cloud-saver/data:/app/data
-      - /DATA/AppData/cloud-saver/config:/app/config
+      - /DATA/AppData/cloudsaver/data:/app/data
+      - /DATA/AppData/cloudsaver/config:/app/config
     restart: unless-stopped
     deploy:
       resources:
@@ -15,23 +15,23 @@ services:
           memory: 256M
 
 x-casaos:
-  id: com.cp0204.cloud-saver
+  id: com.cp0204.cloudsaver
   architectures:
     - amd64
     - arm64
-  main: cloud-saver
-  store_app_id: cloud-saver
+  main: cloudsaver
+  store_app_id: cloudsaver
   author: Cp0204
   category: Productivity
   description:
     en_US: CloudSaver is a web disk resource search and transfer tool. It supports responsive layout and is perfectly adapted to mobile and PC. It can be deployed with one click through Docker.
     zh_CN: 一款网盘资源搜索与转存工具，支持响应式布局，移动端与PC完美适配，可通过 Docker 一键部署。
   developer: jiangrui1994
-  icon: https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloud-saver/icon.png
+  icon: https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloudsaver/icon.svg
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloud-saver/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloud-saver/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloud-saver/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloudsaver/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloudsaver/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/cloudsaver/screenshot-3.png
   tagline:
     en_US: A web disk resource search and transfer tool
     zh_CN: 一款网盘资源搜索与转存工具
