@@ -1,0 +1,48 @@
+name: pdfmathtranslate-next
+services:
+  pdfmathtranslate-next:
+    image: ghcr.io/pdfmathtranslate-next/pdfmathtranslate-next:latest
+    container_name: pdfmathtranslate-next
+    ports:
+      - "7860:7860"
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+
+x-casaos:
+  id: com.cp0204.pdfmathtranslate-next
+  architectures:
+    - amd64
+    - arm64
+  main: pdfmathtranslate-next
+  store_app_id: pdfmathtranslate-next
+  author: Cp0204
+  category: Productivity
+  description:
+    en_US: PDFMathTranslate is a scientific paper translation and bilingual comparison tool based on BabelDOC. It preserves formulas, charts, tables of contents and annotations, supports multiple languages and diverse translation services, and provides a WebUI that can be deployed with one click through Docker.
+    zh_CN: PDFMathTranslate 是一款基于 BabelDOC 的 PDF 科学论文翻译与双语对照工具，完整保留公式、图表、目录与批注，支持多种语言与多种翻译服务，提供可通过 Docker 一键部署的 Web 界面。
+  developer: PDFMathTranslate-next
+  icon: https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/pdfmathtranslate-next/icon.svg
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/pdfmathtranslate-next/screenshot-1.png
+  thumbnail: https://cdn.jsdelivr.net/gh/Cp0204/CasaOS-AppStore-Play@main/Apps/pdfmathtranslate-next/thumbnail.png
+  tagline:
+    en_US: PDF scientific paper translation preserving layouts
+    zh_CN: 保留排版的 PDF 科学论文翻译与双语对照
+  title:
+    en_US: PDFMathTranslateNext
+  tips:
+    before_install:
+      en_US: |
+        The first launch downloads the AI layout model over the network.
+        - If the model download fails, set the `HF_ENDPOINT` environment variable to a mirror such as `https://hf-mirror.com`.
+        - Translation requires configuring a translation service (e.g. Google, DeepL, OpenAI) with your own API key.
+      zh_CN: |
+        首次启动需要联网下载 AI 布局模型。
+        - 若模型下载失败，可设置环境变量 `HF_ENDPOINT=https://hf-mirror.com` 使用镜像加速。
+        - 翻译需要自行配置翻译服务（如 Google、DeepL、OpenAI 等）的 API 密钥。
+  port_map: "7860"
+  scheme: http
+  index: /
