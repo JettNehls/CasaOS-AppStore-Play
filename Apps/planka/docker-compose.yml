@@ -55,7 +55,6 @@ x-casaos:
   id: com.cp0204.planka
   architectures:
     - amd64
-    - arm
     - arm64
   main: planka
   store_app_id: planka

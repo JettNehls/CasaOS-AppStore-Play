@@ -89,7 +89,6 @@ networks:
 x-casaos:
   id: com.cp0204.teslamate
   architectures:
-    - arm
     - arm64
     - amd64
   main: teslamate
